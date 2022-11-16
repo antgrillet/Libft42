@@ -138,6 +138,12 @@ build CMakeFiles/Libft.dir/ft_memmove.c.o: C_COMPILER__Libft_Debug /Users/agrill
   OBJECT_DIR = CMakeFiles/Libft.dir
   OBJECT_FILE_DIR = CMakeFiles/Libft.dir
 
+build CMakeFiles/Libft.dir/ft_strlcpy.c.o: C_COMPILER__Libft_Debug /Users/agrillet/Documents/Libft/ft_strlcpy.c || cmake_object_order_depends_target_Libft
+  DEP_FILE = CMakeFiles/Libft.dir/ft_strlcpy.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -mmacosx-version-min=10.14 -std=gnu11
+  OBJECT_DIR = CMakeFiles/Libft.dir
+  OBJECT_FILE_DIR = CMakeFiles/Libft.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Libft
@@ -146,7 +152,7 @@ build CMakeFiles/Libft.dir/ft_memmove.c.o: C_COMPILER__Libft_Debug /Users/agrill
 #############################################
 # Link the executable Libft
 
-build Libft: C_EXECUTABLE_LINKER__Libft_Debug CMakeFiles/Libft.dir/ft_isalnum.c.o CMakeFiles/Libft.dir/ft_isalpha.c.o CMakeFiles/Libft.dir/ft_isascii.c.o CMakeFiles/Libft.dir/ft_isdigit.c.o CMakeFiles/Libft.dir/ft_isprint.c.o CMakeFiles/Libft.dir/ft_memset.c.o CMakeFiles/Libft.dir/ft_strlen.c.o CMakeFiles/Libft.dir/Test_fonction_de_base.c.o CMakeFiles/Libft.dir/ft_bzero.c.o CMakeFiles/Libft.dir/ft_memcpy.c.o CMakeFiles/Libft.dir/ft_memmove.c.o
+build Libft: C_EXECUTABLE_LINKER__Libft_Debug CMakeFiles/Libft.dir/ft_isalnum.c.o CMakeFiles/Libft.dir/ft_isalpha.c.o CMakeFiles/Libft.dir/ft_isascii.c.o CMakeFiles/Libft.dir/ft_isdigit.c.o CMakeFiles/Libft.dir/ft_isprint.c.o CMakeFiles/Libft.dir/ft_memset.c.o CMakeFiles/Libft.dir/ft_strlen.c.o CMakeFiles/Libft.dir/Test_fonction_de_base.c.o CMakeFiles/Libft.dir/ft_bzero.c.o CMakeFiles/Libft.dir/ft_memcpy.c.o CMakeFiles/Libft.dir/ft_memmove.c.o CMakeFiles/Libft.dir/ft_strlcpy.c.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -mmacosx-version-min=10.14
   OBJECT_DIR = CMakeFiles/Libft.dir
   POST_BUILD = :

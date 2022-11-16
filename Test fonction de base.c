@@ -3,8 +3,9 @@
 
  int	main(void)
  {
-	char b[] = "abcdef";
-	memset(b, 5, 1);
+	char b[] = "";
+	char c[] = "1fg";
+	memmove(b, c, 12);
 	printf("%s", b);
  }
 

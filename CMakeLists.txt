@@ -10,4 +10,4 @@ add_executable(Libft
         ft_isdigit.c
         ft_isprint.c
         ft_memset.c
-        ft_strlen.c "Test fonction de base.c" ft_bzero.c ft_memcpy.c ft_memmove.c)
+        ft_strlen.c "Test fonction de base.c" ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c)
