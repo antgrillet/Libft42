@@ -4,4 +4,5 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+int ft_strlen(char c)
 #endif
