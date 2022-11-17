@@ -1,6 +1,0 @@
-# ninja log v5
-1	37	1668587817000000000	CMakeFiles/Libft.dir/ft_isascii.c.o	ccac062230243670
-0	44	1668587817000000000	CMakeFiles/Libft.dir/ft_isalnum.c.o	dda3bc2544211daa
-20	89	1668587897000000000	CMakeFiles/Libft.dir/Test_fonction_de_base.c.o	178454f33b22b900
-1	53	1668587817000000000	CMakeFiles/Libft.dir/ft_isdigit.c.o	95940ec752b5d9d0
-3	58	1668587817000000000	CMakeFiles/Libft.dir/ft_isprint.c.o	be93e35f62175e33
