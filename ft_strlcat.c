@@ -8,15 +8,15 @@ size_t	strlcat(char *dst, const char *src, size_t dstsize)
 
 	i = 0;
 	len_src = 0;
-	len = ft_strlen(dst);
+	len_dest = ft_strlen(dst);
 	if (dst <= dstsize)
 	{
-		while ((len + len_src < dstsize)
+		while ((len_dest + len_src < dstsize)
 		{
-			dst[(len + len_src)] = src[len_src];
+			dst[(len_dest + len_src)] = src[len_src];
 			len_src++;
 		}
-		dst[(len + len_src)] = "/0";
+		dst[(len_dest + len_src)] = "/0";
 		return (0);
 	}
 	else if (dstsize == 0)
