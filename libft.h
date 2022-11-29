@@ -5,4 +5,5 @@
 #include <unistd.h>
 
 int ft_strlen(char *c)
+
 #endif
