@@ -9,7 +9,7 @@ t_list *ft_lstnew(void *content)
 	lenouvelelements -> content = content;
 	lenouvelelements -> next = NULL;
 
-	return (new);
+	return (lenouvelelements);
 
 
 }

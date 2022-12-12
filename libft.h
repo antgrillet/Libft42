@@ -13,7 +13,7 @@ typedef struct s_list
 }					t_list;
 
 
-size_t      ft_strlen(char *c);
+size_t	ft_strlen(char *c);
 
 
 #endif
