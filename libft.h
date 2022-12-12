@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 #include <string.h>
 
 typedef struct s_list
@@ -12,7 +13,7 @@ typedef struct s_list
 }					t_list;
 
 
-size_t ft_strlen(char *c)
+size_t      ft_strlen(char *c);
 
 
 #endif
