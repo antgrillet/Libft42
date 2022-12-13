@@ -31,7 +31,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		trigger;
 	char	*s2;
 
-	if(!(s2 = malloc(sizeof(char) * (count_letter(s1,set) + 1))))
+	if(!(s2 = malloc(sizeof(char *) * (count_letter(s1,set) + 1))))
 		return (NULL);
 	i = 0;
 	ii = 0;
@@ -60,8 +60,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 int	main(void)
 {
-	char	s1[]= "bonjour, a tous;comment allez vous;";
-	char	set[]=";,.";
+	char	s1[]= "antonin fais caca tout les matins et chie des oiseaux";
+	char	set[]="t;o;u;l;e;s";
 
 	printf("%s", ft_strtrim(s1,set));
 }
