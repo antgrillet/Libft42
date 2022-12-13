@@ -14,6 +14,7 @@ typedef struct s_list
 
 
 size_t	ft_strlen(char *c);
+char	*ft_strdup(const char *s);
 
 
 #endif

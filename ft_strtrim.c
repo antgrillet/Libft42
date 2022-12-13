@@ -15,10 +15,8 @@ size_t	count_letter(char const *s1, char const *set)
 		while(set[ii])
 		{
 			if (set[ii] == set[i])
-			{
 				count++;
-				ii+;
-			}
+			ii++;
 		} 
 		i++;
 	}
@@ -41,18 +39,29 @@ char	*ft_strtrim(char const *s1, char const *set)
 	iii = 0;
 	while (s1[i])
 	{
-		while (set[ii])
+		while(set[ii])
 		{
 			if(s1[i] == set[ii])
 				trigger = 1;
-			ii+;
+			ii++;
 		}
 		ii = 0;
 		if(trigger != 1)
-		
-			
+		{	
+			s2[iii] = s1[i];
+			iii++;
+		}
+		i++;
+		trigger = -1;
 	}
-	
+	s2[iii] = '\0';
+	return(s2);	
+}
 
-	
+int	main(void)
+{
+	char	s1[]= "bonjour, a tous;comment allez vous;";
+	char	set[]=";,.";
+
+	printf("%s", ft_strtrim(s1,set));
 }
