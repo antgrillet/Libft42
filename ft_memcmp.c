@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agrillet <anto73grillet@gmail.com>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/14 12:50:57 by agrillet          #+#    #+#             */
+/*   Updated: 2022/12/14 12:50:57 by agrillet         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
@@ -9,7 +21,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	v1 = (size_t *)s1;
 	v2 = (size_t *)s2;
 	i = 0;
-
 	while (i <= n)
 	{
 		if (v1[i] > v2[i])
@@ -19,5 +30,4 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		i++;
 	}
 	return (0);
-	
 }

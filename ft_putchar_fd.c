@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrillet <anto73grillet@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 12:20:35 by agrillet          #+#    #+#             */
-/*   Updated: 2022/12/14 12:22:29 by agrillet         ###   ########.fr       */
+/*   Created: 2022/12/14 12:53:55 by agrillet          #+#    #+#             */
+/*   Updated: 2022/12/14 12:57:22 by agrillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t	i;
-	void	*tableau;
-
-	i = 0;
-	tableau = malloc(sizeof(size) * nmemb);
-	return (tableau);
+	write(fd, &c, 1);
 }
+/*
+int	main(void)
+{
+	ft_putchar_fd('p',2);
+}
+*/

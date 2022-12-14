@@ -3,7 +3,7 @@ SRCS = 		ft_atoi.c ft_calloc.c ft_isprint.c ft_memmove.c ft_strlcat.c ft_strrchr
  			ft_isascii.c ft_memcmp.c ft_strdup.c ft_strncmp.c ft_toupper.c ft_bzero.c ft_isdigit.c ft_memcpy.c ft_strjoin.c\
  			ft_strnstr.c
 
-OBJS = 		${SRCS.c=.o}
+OBJS = 		${SRCS:.c=.o}
 
 HEADER = 	libft.h
 
@@ -15,13 +15,14 @@ RM = 		rm -f
 
 NAME = 		libft.a
 
-%.o: %.c ${HEADER} Makefile
-	${CC} ${CFLAGS} -I -c $c -o $@
-
 all:		${NAME}
 
+%.o: %.c	${HEADER} Makefile
+	 ${CC} ${CFLAGS} -I -c $< -o $@
+	
+
 ${NAME}: 	${OBJS} ${HEADER}
-			ar rcs ${NAME} ${OBJS}
+			ar -rcs ${NAME} ${OBJS}
 
 fclean:		clean
 			${RM} ${NAME}

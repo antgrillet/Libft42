@@ -1,57 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrillet <anto73grillet@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 12:39:01 by agrillet          #+#    #+#             */
-/*   Updated: 2022/12/14 12:39:01 by agrillet         ###   ########.fr       */
+/*   Created: 2022/12/14 12:59:27 by agrillet          #+#    #+#             */
+/*   Updated: 2022/12/14 13:01:29 by agrillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_for_malloc(int n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int	i;
-
-	i = 1;
-	if (n < 0)
-	{
-		n = n * -1;
-		i = i + 1;
-	}
-	while (n >= 10)
-	{
-		n = n / 10;
-		i++;
-	}
-	return (i);
-}
-
-char	*ft_itoa(int n)
-{
-	char	*charr;
-	int		j;
-	int		y;
 	size_t	i;
+	int		j;
 
 	i = 0;
-	y = count_for_malloc(y);
 	j = 0;
-	charr = (!(malloc(sizeof(char) * (count_for_malloc(n) + 1))));
+	if (n == -2147483648)
+		write(fd, "-2147483648", 11);
 	if (n < 0)
 	{
-		charr[0] = '-';
+		write(fd, "-", 1);
+		n = n * -1;
 	}
-	while (n < 10)
+	if (n > 9)
 	{
-		charr[y] = (n % 10) + '0';
+		j = (n % 10) + 48;
 		n = n / 10;
-		y--;
+		ft_putnbr_fd(n, fd);
+		write(fd, &j, 1);
 	}
-	charr[y] = n;
-	charr[(count_for_malloc + 1)] = '\0';
-	return (charr);
+	else
+	{
+		j = n + 48;
+		write(fd, &j, 1);
+	}
 }
+/*
+int	main(void)
+{
+	ft_putnbr_fd(-789,1);
+}*/

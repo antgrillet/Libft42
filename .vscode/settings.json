@@ -1,5 +1,8 @@
 {
     "cmake.configureOnOpen": false,
     "files.autoSave": "afterDelay",
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "files.associations": {
+        "stdio.h": "c"
+    }
 }
