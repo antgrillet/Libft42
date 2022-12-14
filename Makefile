@@ -17,8 +17,8 @@ NAME = 		libft.a
 
 all:		${NAME}
 
-%.o: %.c	${HEADER} Makefile
-	 ${CC} ${CFLAGS} -I -c $< -o $@
+%.o: %.c
+			${CC} ${CFLAGS} -I. -c $< -o $@
 	
 
 ${NAME}: 	${OBJS} ${HEADER}
@@ -27,7 +27,7 @@ ${NAME}: 	${OBJS} ${HEADER}
 fclean:		clean
 			${RM} ${NAME}
 
-re:			fclean ${NAME}
+re:			fclean ${NAME} ${OBJS}
 
 .PHONY:		all fclean clean re
 

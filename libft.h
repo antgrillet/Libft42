@@ -15,6 +15,7 @@ typedef struct s_list
 
 size_t	ft_strlen(char *c);
 char	*ft_strdup(const char *s);
+int	ft_atoi(const char *nptr);
 
 
 #endif

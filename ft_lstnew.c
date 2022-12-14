@@ -6,7 +6,7 @@
 /*   By: agrillet <anto73grillet@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 12:44:28 by agrillet          #+#    #+#             */
-/*   Updated: 2022/12/14 12:45:18 by agrillet         ###   ########.fr       */
+/*   Updated: 2022/12/14 16:41:04 by agrillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list		lenouvelelements;
+	t_list		*lenouvelelements;
 
-	lenouvelelements = malloc(sizeof (t_list) * 1 + 1);
+	lenouvelelements = malloc(sizeof(lenouvelelements));
 	lenouvelelements -> content = content;
 	lenouvelelements -> next = NULL;
 	return (lenouvelelements);

@@ -6,11 +6,11 @@
 /*   By: agrillet <anto73grillet@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 12:15:39 by agrillet          #+#    #+#             */
-/*   Updated: 2022/12/14 12:18:16 by agrillet         ###   ########.fr       */
+/*   Updated: 2022/12/14 16:10:04 by agrillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
