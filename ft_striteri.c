@@ -2,8 +2,14 @@
 
 char	*ft_striteri(char *s,(*f)(unsigned int, char*))
 {
-	char	*s2;
 	size_t	i;
 
-	
+	i = 0;
+	if(!s)
+		return(NULL);
+	while (s[i])
+	{
+		(*f)(i, (s + i))
+		i++;
+	}
 }

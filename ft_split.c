@@ -22,7 +22,7 @@ size_t	count_word(const char *str, char c)
 		}
 		ii++;
 	}
-	return(i);
+	return(iii);
 }
 char	*copy_word(char const *s, size_t i, int j)
 {
@@ -51,7 +51,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = -1;
 	y = 0;
-	if (!s || !c || !(tab = malloc(sizeof(char **) * count_word(s,c) + 1)))
+	if (!s || !c || !(tab = malloc(sizeof(char *) * (count_word(s,c) + 1))))
 		return (NULL);
 	while (s[i])
 	{
@@ -67,6 +67,7 @@ char	**ft_split(char const *s, char c)
 		}
 		i++;
 	}
+	tab[y] = 0;
 	return(tab);
 }
 
@@ -74,13 +75,13 @@ int	main(void)
 {
 	size_t	i = 0;
 	char	**tab;
-	const char	exemple[] = "bonjour , je , ,, m'apelle anto.";
+	const char	exemple[] = "bonjour je m'apelle anto.";
 
 	tab = malloc(sizeof(char *) * 25);
 	tab = ft_split(exemple, ',');
-	while(tab[i])
+	while(ft_split(exemple, ',')[i])
 	{
-		printf("%s" , tab[i]);
+		printf("%s" , ft_split(exemple, ',')[i]);
 		i++;
 	}
 }
