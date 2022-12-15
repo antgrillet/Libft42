@@ -25,10 +25,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 }
 	
 
-
+/*
 int	main(void)
 {
 	const char	y[] = "oui ,";
 	const char	z[] = "bonjour comment puis-je vous aider";
 	printf("%s" , ft_strjoin(y, z));
 }
+*/

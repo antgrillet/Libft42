@@ -31,7 +31,7 @@ char	*copy_word(char const *s, size_t i, int j)
 
 	jj = 0;
 	copied_word = malloc(sizeof(char) * (i - j + 1));
-	while (j != i)
+	while ((size_t)j != i)
 	{
 		copied_word[jj] = s[j];
 		j++;
@@ -70,7 +70,7 @@ char	**ft_split(char const *s, char c)
 	tab[y] = 0;
 	return(tab);
 }
-
+/*
 int	main(void)
 {
 	size_t	i = 0;
@@ -85,3 +85,4 @@ int	main(void)
 		i++;
 	}
 }
+*/ 

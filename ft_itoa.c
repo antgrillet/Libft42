@@ -6,7 +6,7 @@
 /*   By: agrillet <anto73grillet@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 12:39:01 by agrillet          #+#    #+#             */
-/*   Updated: 2022/12/14 12:39:01 by agrillet         ###   ########.fr       */
+/*   Updated: 2022/12/15 10:34:07 by agrillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ char	*ft_itoa(int n)
 	size_t	i;
 
 	i = 0;
-	y = count_for_malloc(y);
+	y = count_for_malloc(n);
 	j = 0;
-	charr = (!(malloc(sizeof(char) * (count_for_malloc(n) + 1))));
+	charr = (char*)malloc(sizeof(char) * (count_for_malloc(n) + 1));
 	if (n < 0)
 	{
 		charr[0] = '-';
@@ -52,6 +52,6 @@ char	*ft_itoa(int n)
 		y--;
 	}
 	charr[y] = n;
-	charr[(count_for_malloc + 1)] = '\0';
+	charr[(count_for_malloc(n) + 1)] = '\0';
 	return (charr);
 }

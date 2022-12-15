@@ -8,9 +8,10 @@ char    *ft_strmapi(char const *s,char (*f)(unsigned int, char))
     s2 = ft_strdup(s);
     if(!s2 || !s || !i)
         return(NULL);
-    while (str[i])
+    while (s2[i])
     {
-        s2[i] = (i, s2[i]);
+        s2[i] = 
+        (f)(i, s2[i]);
         i++;
     }
     return(s2);
