@@ -24,7 +24,9 @@ all:		${NAME}
 ${NAME}: 	${OBJS} ${HEADER}
 			ar -rcs ${NAME} ${OBJS}
 
-clean :		${RM} ${OBJS}
+clean:	
+	${RM} ${OBJS}
+
 fclean:		clean
 			${RM} ${NAME}
 

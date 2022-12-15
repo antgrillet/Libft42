@@ -58,10 +58,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return(s2);	
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char	s1[]= "antonin fais caca tout les matins et chie des oiseaux";
 	char	set[]="t;o;u;l;e;s";
 
 	printf("%s", ft_strtrim(s1,set));
-}
+} */

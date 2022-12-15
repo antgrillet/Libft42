@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void    ft_memset(void *pointer, int value, size_t len)
+void    *ft_memset(void *pointer, int value, size_t len)
 {
     unsigned int i;
     unsigned char *valuee;
@@ -26,4 +26,5 @@ void    ft_memset(void *pointer, int value, size_t len)
         i++;
     }
     pointer = (void *)valuee;
+    return(pointer);
 }

@@ -18,15 +18,21 @@ void    *ft_memchr(const void *s1, int c, size_t n)
     char    *s2;
 
     i = 0;
-    s2 = (char *)malloc(sizeof(char *) * n + 1);
     s2 = (char *)s1;
     if(!s2)
         return (NULL);
-    while (s2[i])
+    while (s2[i] && i < n)
     {
-        if (s2[i] == c)
-            return ((void *)s1 + i);
+        if (s2[i] == (unsigned char)c)
+            return ((void*)s1[i]);
         i++;
     }
     return (NULL);
+}
+
+int main(void)
+{
+    char s[] = {0, 1, 2 ,3 ,4 ,5};
+    ft_memchr(s,)
+    printf()
 }

@@ -6,14 +6,14 @@ char *ft_strrchr(const char *s, int c)
 	char *str;
 
 	str = (char *)s;
-	i = ft_strlen(str);
-	while (i >= 0)
+	i = ft_strlen(s);
+	while (i > 0)
 	{
-		if (str[i] == c)
-			return (&str[i]);
-		else
-			i++;
+		if (str[i] == (char)c)
+			return(&str[i]);
+		i--;
 	}
+	if(str[0] == (char)c)
+		return(&str[0]);
 	return (NULL);
 }
-

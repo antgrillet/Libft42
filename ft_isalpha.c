@@ -10,24 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
-	if (c > 64 && c < 91)
-		return (1);
-	if (c > 96 && c < 123)
-		return (1);
-	return (0);
+	return((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));	
 }
-/*
-int	main(void)
-{
-	int		a;
-	char	c;
-
-	c = 'J';
-	a = ft_isalpha(c);
-	printf(%d , a);
-}
-*/
