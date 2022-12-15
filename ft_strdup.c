@@ -6,14 +6,14 @@ char    *strdup(const char *s)
 	char	*duplication;
 
 	i = 0;
-	duplication = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	duplication = (char *)malloc(sizeof(char) * (ft_strlen((char*)s) + 1));
 	if (duplication == NULL)
 	{
 		return (NULL);
 	}
 	else
 	{
-		while (i < ft_strlen(s))
+		while (i < ft_strlen((char*)s))
 		{
 			duplication[i] = s[i];
 			i++;

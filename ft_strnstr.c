@@ -6,8 +6,8 @@ char	*strnstr(const char *big, const char *little, size_t len)
 
 	n = 0;
 	i = 0;
-	if(ft_strlen(little) == 0)
-		return(big);
+	if(ft_strlen((char *)little) == 0)
+		return((char*)big);
 	while (big[i])
 	{
 		if (big[i] == little[n])
@@ -18,13 +18,12 @@ char	*strnstr(const char *big, const char *little, size_t len)
 				n++;
 				if (n == len)
 				{
-					return(big[(i - len)]);
+					return(&((char *)big)[(i - len)]);
 				}
 				
 			}
 		}
 		i++;
-		return(NULL);
 	}
-	
+	return(NULL);
 }

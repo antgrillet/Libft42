@@ -12,15 +12,20 @@
 
 #include "libft.h"
 
-void	ft_memcpy(void *dst, void *src, int n)
+void	*ft_memcpy(void *dst, void *src, int n)
 {
 	int	i;
+	unsigned char	*dstt;
+	unsigned char	*srcc;
+
+	dstt = (unsigned char *)dst;
+	srcc = (unsigned char*)src;
 
 	i = 0;
 	while (i != n)
 	{
-		dst[i] = src[i];
+		dstt[i] = srcc[i];
 		i++;
 	}
-	return (dst)
+	return (dst);
 }
