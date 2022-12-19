@@ -6,7 +6,7 @@
 /*   By: agrillet <anto73grillet@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 12:15:39 by agrillet          #+#    #+#             */
-/*   Updated: 2022/12/14 16:10:04 by agrillet         ###   ########.fr       */
+/*   Updated: 2022/12/19 14:42:39 by agrillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,19 @@ int	ft_atoi(const char *nptr)
 
 	i = 0;
 	value_nptr = 0;
-	if (nptr[i] >= '0' && nptr[i] <= '9')
+	while(nptr[i])
 	{
-		while (nptr[i] >= '0' && nptr[i] <= '9')
+		if (nptr[i] >= '0' && nptr[i] <= '9')
 		{
-			value_nptr = value_nptr * 10;
-			value_nptr = value_nptr + ((nptr[i]) - 48);
-			i++;
+			while (nptr[i] >= '0' && nptr[i] <= '9')
+			{
+				value_nptr = value_nptr * 10;
+				value_nptr = value_nptr + ((nptr[i]) - 48);
+				i++;
+			}
 		}
+		i++;
 	}
+
 	return (value_nptr);
 }

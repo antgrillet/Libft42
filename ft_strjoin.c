@@ -7,6 +7,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	size_t	j;
 
+	if(!s1 ||!s2)
+		return (NULL);
 	if(!(s3 = malloc(sizeof(char) * (ft_strlen((char*)s1) + ft_strlen((char*)s2) + 1))))
 		return(NULL);
 	i = 0;
@@ -21,15 +23,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		s3[(i + j)] = s2[j];
 		j++;
 	}
-	return(s3);
+	return(s3[i + j] = '\0', s3);
 }
-	
-
-/*
-int	main(void)
-{
-	const char	y[] = "oui ,";
-	const char	z[] = "bonjour comment puis-je vous aider";
-	printf("%s" , ft_strjoin(y, z));
-}
-*/
