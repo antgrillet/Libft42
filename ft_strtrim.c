@@ -31,7 +31,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		trigger;
 	char	*s2;
 
-	if(!(s2 = malloc(sizeof(char *) * (count_letter(s1,set) + 1))))
+	if(!(s2 = malloc(sizeof(char *) * (count_letter(s1,set)))))
 		return (NULL);
 	i = 0;
 	ii = 0;

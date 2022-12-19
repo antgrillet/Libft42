@@ -8,9 +8,7 @@ char    *ft_strdup(const char *s)
 	i = 0;
 	duplication = (char *)malloc(sizeof(char) * (ft_strlen((char*)s) + 1));
 	if (duplication == NULL)
-	{
 		return (NULL);
-	}
 	else
 	{
 		while (i < ft_strlen((char*)s))

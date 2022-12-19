@@ -6,7 +6,7 @@
 /*   By: agrillet <anto73grillet@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 12:59:27 by agrillet          #+#    #+#             */
-/*   Updated: 2022/12/14 13:01:29 by agrillet         ###   ########.fr       */
+/*   Updated: 2022/12/19 19:48:57 by agrillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,27 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-	int		j;
+	long 	nb;
+	int		tmp;
 
-	i = 0;
-	j = 0;
-	if (n == -2147483648)
-		write(fd, "-2147483648", 11);
-	if (n < 0)
+	tmp = 0;
+	nb = n;
+	if (nb < 0)
 	{
-		write(fd, "-", 1);
-		n = n * -1;
+		ft_putchar_fd('-', fd);
+		nb = nb * -1;
 	}
-	if (n > 9)
+	if (nb > 9)
 	{
-		j = (n % 10) + 48;
-		n = n / 10;
-		ft_putnbr_fd(n, fd);
-		write(fd, &j, 1);
+		tmp = nb % 10 + '0';
+		nb = nb / 10;
+		ft_putnbr_fd(nb, fd);
+		ft_putchar_fd(tmp ,fd);
 	}
 	else
 	{
-		j = n + 48;
-		write(fd, &j, 1);
+		tmp = nb + 48;
+		ft_putchar_fd(tmp ,fd);
 	}
 }
 /*
