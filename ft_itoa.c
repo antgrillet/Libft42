@@ -44,7 +44,7 @@ char	*ft_itoa(int n)
 	nb = n;
 	charr = malloc(sizeof(char) * (len + 1));
 	if (!charr)
-		return(NULL);
+		return (NULL);
 	charr[len--] = '\0';
 	if (n == 0)
 		charr[0] = '0';

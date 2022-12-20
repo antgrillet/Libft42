@@ -15,10 +15,11 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*tableau;
-	
-	if(!(tableau = malloc(size * count)))
+
+	tableau = malloc (size * count);
+	if (!tableau)
 		return (NULL);
-	return (ft_bzero(tableau, count * size),tableau);
+	return (ft_bzero(tableau, count * size), tableau);
 }
 /*
 int	main(void)

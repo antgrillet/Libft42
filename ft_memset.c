@@ -12,19 +12,18 @@
 
 #include "libft.h"
 
-void    *ft_memset(void *pointer, int value, size_t len)
+void	*ft_memset(void *pointer, int value, size_t len)
 {
-    unsigned int i;
-    unsigned char *valuee;
+	unsigned int	i;
+	unsigned char	*valuee;
 
-    i = 0;
-    valuee = (unsigned char *)pointer;
-
-    while (i != len)
-    {
-        valuee[i] = value;
-        i++;
-    }
-    pointer = (void *)valuee;
-    return(pointer);
+	i = 0;
+	valuee = (unsigned char *)pointer;
+	while (i != len)
+	{
+		valuee[i] = value;
+		i++;
+	}
+	pointer = (void *)valuee;
+	return (pointer);
 }

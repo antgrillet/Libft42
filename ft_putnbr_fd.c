@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long 	nb;
+	long	nb;
 	int		tmp;
 
 	tmp = 0;
@@ -29,12 +29,12 @@ void	ft_putnbr_fd(int n, int fd)
 		tmp = nb % 10 + '0';
 		nb = nb / 10;
 		ft_putnbr_fd(nb, fd);
-		ft_putchar_fd(tmp ,fd);
+		ft_putchar_fd (tmp, fd);
 	}
 	else
 	{
 		tmp = nb + 48;
-		ft_putchar_fd(tmp ,fd);
+		ft_putchar_fd (tmp, fd);
 	}
 }
 /*

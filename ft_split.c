@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agrillet <anto73grillet@gmail.com>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/20 11:50:05 by agrillet          #+#    #+#             */
+/*   Updated: 2022/12/20 11:50:05 by agrillet         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	count_word(const char *str, char c)
@@ -5,13 +17,13 @@ size_t	count_word(const char *str, char c)
 	size_t	i;
 	size_t	ii;
 	size_t	iii;
-	
+
 	i = 0;
 	ii = 0;
 	iii = 0;
 	while (str[ii])
 	{
-		if(str[ii] != c && i != 1)
+		if (str[ii] != c && i != 1)
 		{
 			iii++;
 			i++;
@@ -22,8 +34,9 @@ size_t	count_word(const char *str, char c)
 		}
 		ii++;
 	}
-	return(iii);
+	return (iii);
 }
+
 char	*copy_word(char const *s, size_t i, int j)
 {
 	size_t	jj;
@@ -35,10 +48,10 @@ char	*copy_word(char const *s, size_t i, int j)
 	{
 		copied_word[jj] = s[j];
 		j++;
-		jj++; 
+		jj++;
 	}
 	copied_word[jj] = '\0';
-	return(copied_word);
+	return (copied_word);
 }
 
 char	**ft_split(char const *s, char c)
@@ -46,12 +59,13 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	int		j;
 	size_t	y;
-	char **tab;
+	char	**tab;
 
 	i = 0;
 	j = -1;
 	y = 0;
-	if (!s || !c || !(tab = malloc(sizeof(char *) * (count_word(s,c) + 1))))
+	tab = malloc(sizeof(char *) * (count_word(s, c) + 1));
+	if (!s || !c || !tab)
 		return (NULL);
 	while (s[i])
 	{
@@ -59,16 +73,16 @@ char	**ft_split(char const *s, char c)
 		{
 			j = i;
 		}
-		if(s[i] == c)
+		if (s[i] == c)
 		{
-			tab[y] = copy_word(s,i,j);
+			tab[y] = copy_word(s, i, j);
 			y++;
 			j = -1;
 		}
 		i++;
 	}
 	tab[y] = 0;
-	return(tab);
+	return (tab);
 }
 /*
 int	main(void)
