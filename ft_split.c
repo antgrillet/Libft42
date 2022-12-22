@@ -12,91 +12,55 @@
 
 #include "libft.h"
 
-size_t	count_word(const char *str, char c)
+size_t	count_word(char const *s, char c)
 {
 	size_t	i;
-	size_t	ii;
-	size_t	iii;
+	size_t	tmp;
 
 	i = 0;
-	ii = 0;
-	iii = 0;
-	while (str[ii])
+	tmp = 0;
+
+	while (s[i])
 	{
-		if (str[ii] != c && i != 1)
-		{
-			iii++;
-			i++;
-		}
-		else if (str[ii] == c)
-		{
-			i = 0;
-		}
-		ii++;
+		if(s[i] == c)
+			tmp++;
+		i++;
 	}
-	return (iii);
+	return(tmp);
 }
 
-char	*copy_word(char const *s, size_t i, int j)
+char	**split_word(const char *s, char c, char **tab)
 {
-	size_t	jj;
-	char	*copied_word;
+	size_t	start;
+	size_t	end;
 
-	jj = 0;
-	copied_word = malloc(sizeof(char) * (i - j + 1));
-	while ((size_t)j != i)
+	start = 0;
+	end = 0;
+	while(s[end])
 	{
-		copied_word[jj] = s[j];
-		j++;
-		jj++;
+		while(s[end] != c)
+			end++;
+		if (s[end - 1] != c)
+			*tab = ft_substr(s, start , end - start);
+		start = end;
+		tab++;
+		end++;
 	}
-	copied_word[jj] = '\0';
-	return (copied_word);
+	*tab = "\0";
+	return(tab);
 }
-
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
-	int		j;
-	size_t	y;
+	size_t	j;
 	char	**tab;
 
 	i = 0;
-	j = -1;
-	y = 0;
-	tab = malloc(sizeof(char *) * (count_word(s, c) + 1));
-	if (!s || !c || !tab)
-		return (NULL);
-	while (s[i])
-	{
-		if (s[i] != c && j < 0)
-		{
-			j = i;
-		}
-		if (s[i] == c)
-		{
-			tab[y] = copy_word(s, i, j);
-			y++;
-			j = -1;
-		}
-		i++;
-	}
-	tab[y] = 0;
-	return (tab);
-}
-/*
-int	main(void)
-{
-	size_t	i = 0;
-	char	**tab;
-	const char	exemple[] = "bonjour je m'apelle anto.";
+	tab = malloc(sizeof(char *) * count_word(s, c) + 1);
+	j = 0;
+	if (!s || !tab)
+		return(NULL);
+	return(split_word(s, c, tab));
+	
 
-	tab = malloc(sizeof(char *) * 25);
-	tab = ft_split(exemple, ',');
-	while(ft_split(exemple, ',')[i])
-	{
-		printf("%s" , ft_split(exemple, ',')[i]);
-		i++;
-	}
 }
-*/ 
