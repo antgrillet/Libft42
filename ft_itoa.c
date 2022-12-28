@@ -60,9 +60,3 @@ char	*ft_itoa(int n)
 	}
 	return (charr);
 }
-
-// int main()
-// {
-// 	printf("%s", ft_itoa(-0));
-// 	printf("%d", count_for_malloc(-152));
-// }

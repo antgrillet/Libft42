@@ -6,11 +6,10 @@
 /*   By: agrillet <anto73grillet@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 12:17:21 by agrillet          #+#    #+#             */
-/*   Updated: 2022/12/22 12:20:22 by agrillet         ###   ########.fr       */
+/*   Updated: 2022/12/28 09:44:22 by agrillet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	
 }
