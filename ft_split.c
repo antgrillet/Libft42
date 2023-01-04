@@ -12,6 +12,26 @@
 
 #include "libft.h"
 
+void	**free_split(char **tab)
+{
+	size_t	i;
+	size_t	j;
+
+	j = 0;
+	i = 0;
+	while (tab[i])
+	{
+		while (tab[i][j])
+		{
+			free(tab[i][j]);
+			j++;
+		}
+		free(tab[i]);
+		i++;
+	}
+	
+}
+
 static int	count_for_malloc(const char *s, char c)
 {
 	int	i;
@@ -40,8 +60,14 @@ static char	*create_charr(const char *s, int start, int end)
 
 	i = 0;
 	charr = malloc(sizeof(char) * (end - start + 1));
+	if (!charr)
+		return (NULL);
 	while (start < end)
-		charr[i++] = s[start++];
+	{
+		charr[i] = s[start];	
+		i++;
+		start++;
+	}
 	charr[i] = '\0';
 	return (charr);
 }
@@ -54,7 +80,7 @@ char	**ft_split(char const *s, char c)
 	char	**split;
 
 	split = malloc(sizeof(char *) * (count_for_malloc(s, c) + 1));
-	if (!s || !split)
+	if (!s || !split || !c)
 		return (0);
 	i = 0;
 	index_of_split = 0;
