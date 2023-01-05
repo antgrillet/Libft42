@@ -12,90 +12,81 @@
 
 #include "libft.h"
 
-void	**free_split(char **tab)
+static int	clear(char **strs, int a)
 {
-	size_t	i;
-	size_t	j;
-
-	j = 0;
-	i = 0;
-	while (tab[i])
+	if (!strs[a])
 	{
-		while (tab[i][j])
+		while (a >= 0)
 		{
-			free(tab[i][j]);
-			j++;
+			free(strs[a]);
+			a--;
 		}
-		free(tab[i]);
-		i++;
+		free(strs);
+		return (1);
 	}
-	
+	return (0);
 }
 
-static int	count_for_malloc(const char *s, char c)
+static int	ft_wordcount(char const *s, char c)
 {
+	int	wordcount;
 	int	i;
-	int	marker;
 
+	wordcount = 0;
 	i = 0;
-	marker = 0;
-	while (*s)
+	while (s[i])
 	{
-		if (*s != c && marker == 0)
+		if (s[i] == c)
+			while (s[i] == c)
+				i++;
+		else
 		{
-			marker = 1;
-			i++;
+			while (s[i] && s[i] != c)
+				i++;
+			wordcount++;
 		}
-		else if (*s == c)
-			marker = 0;
-		s++;
 	}
-	return (i);
+	return (wordcount);
 }
 
-static char	*create_charr(const char *s, int start, int end)
+static	char	**tab(char const *s, char **strs, char c, unsigned int begin)
 {
-	char	*charr;
-	int		i;
+	size_t	end;
+	int		wordcount;
 
-	i = 0;
-	charr = malloc(sizeof(char) * (end - start + 1));
-	if (!charr)
-		return (NULL);
-	while (start < end)
+	end = 0;
+	wordcount = 0;
+	while (s[begin])
 	{
-		charr[i] = s[start];	
-		i++;
-		start++;
+		if (s[begin] == c)
+			while (s[begin] == c)
+				begin++;
+		else
+		{
+			end = begin;
+			while (s[end] && s[end] != c)
+				end++;
+			strs[wordcount] = ft_substr(s, begin, (end - begin));
+			if (wordcount < ft_wordcount(s, c) && clear (strs, wordcount))
+				return (NULL);
+			wordcount++;
+			begin = end;
+		}
 	}
-	charr[i] = '\0';
-	return (charr);
+	strs[wordcount] = 0;
+	return (strs);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	index_of_split;
-	int		marker;
-	char	**split;
+	char	**strs;
+	int		wordcount;
 
-	split = malloc(sizeof(char *) * (count_for_malloc(s, c) + 1));
-	if (!s || !split || !c)
+	if (!s)
 		return (0);
-	i = 0;
-	index_of_split = 0;
-	marker = -1;
-	while (i <= ft_strlen(s))
-	{
-		if (s[i] != c && marker < 0)
-			marker = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && marker >= 0)
-		{
-			split[index_of_split++] = create_charr(s, marker, i);
-			marker = -1;
-		}
-		i++;
-	}
-	split[index_of_split] = 0;
-	return (split);
+	wordcount = ft_wordcount(s, c);
+	strs = malloc(sizeof(char *) * (wordcount + 1));
+	if (!strs)
+		return (NULL);
+	return (tab(s, strs, c, 0));
 }

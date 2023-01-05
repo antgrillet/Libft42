@@ -12,57 +12,31 @@
 
 #include "libft.h"
 
-static int	space_for_atoi(const char *str, int i)
-{
-	while (str[i] == '\t' || (str[i] == '\n') || (str[i] == '\v') || \
-			(str[i] == '\f') || (str[i] == '\r') || str[i] == ' ')
-	{
-		i = i + 1;
-	}
-	return (i);
-}
-
-static int	putnbr_int(int s_int, const char *str, int i)
-{
-	while (str[i] <= 57 && str[i] >= 48)
-	{
-		s_int = s_int * 10;
-		s_int += (str[i] - 48);
-		i = i + 1;
-	}
-	return (s_int);
-}
-
-static int	positive_or_negative_(int count_negative, int c_positif, int s_int)
-{
-	if ((count_negative + c_positif) > 1)
-		return (0);
-	if ((count_negative % 2) == 1)
-		s_int = s_int * -1;
-	else
-		s_int = s_int * 1;
-	return (s_int);
-}
-
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	count_negative;
-	int	c_positif;
-	int	y;
+	int			i;
+	long		nb;
+	int			neg;
 
 	i = 0;
-	count_negative = 0;
-	c_positif = 0;
-	i = space_for_atoi(str, i);
-	while (str[i] == 45 || str[i] == 43)
+	nb = 0;
+	neg = 1;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (str[i] == 45)
-			count_negative++;
-		if (str[i] == 43)
-			c_positif++;
+		if (str[i] == '-')
+			neg *= -1;
 		i++;
 	}
-	y = putnbr_int(0, str, i);
-	return (positive_or_negative_(count_negative, c_positif, y));
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		if (nb >= LONG_MAX / 10 && neg == 1)
+			return (-1);
+		if (nb < LONG_MIN / 10 && neg == -1)
+			return (0);
+		nb = (nb * 10) + (str[i] - '0');
+		i++;
+	}
+	return (nb * neg);
 }
