@@ -12,10 +12,12 @@
 
 #include "libft.h"
 
-t_list	ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*count;
 
+	if (!lst)
+		return (NULL);
 	count = lst;
 	while ((count -> next) != NULL)
 	{
