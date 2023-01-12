@@ -36,27 +36,27 @@ int	count_for_malloc(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*charr;
+	char	*str;
 	int		len;
 	long	nb;
 
 	len = count_for_malloc(n);
 	nb = n;
-	charr = malloc(sizeof(char) * (len + 1));
-	if (!charr)
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
 		return (NULL);
-	charr[len--] = '\0';
+	str[len--] = '\0';
 	if (n == 0)
-		charr[0] = '0';
+		str[0] = '0';
 	else if (nb < 0)
 	{
-		charr[0] = '-';
+		str[0] = '-';
 		nb = nb * -1;
 	}
 	while (nb)
 	{
-		charr[len--] = (nb % 10) + '0';
+		str[len--] = (nb % 10) + '0';
 		nb = nb / 10;
 	}
-	return (charr);
+	return (str);
 }

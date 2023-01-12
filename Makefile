@@ -34,7 +34,7 @@ NAME = 		libft.a
 
 all:		${NAME}
 
-%.o: %.c
+%.o: %.c	${HEADER}
 			${CC} ${CFLAGS} -I. -c $< -o $@
 	
 

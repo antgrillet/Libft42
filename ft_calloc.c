@@ -14,16 +14,15 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*tableau;
+	void	str;
+	size_t	i;
 
-	tableau = malloc (size * count);
-	if (!tableau)
+	i = 0;
+	if (size != 0 && count > (SIZE_MAX / size))
 		return (NULL);
-	return (ft_bzero(tableau, count * size), tableau);
+	str = malloc (count size);
+	if (!str)
+		return (NULL);
+	ft_bzero(str, count * size);
+	return (str);
 }
-/*
-int	main(void)
-{
-	ft_calloc(554,9899);
-}
-*/
